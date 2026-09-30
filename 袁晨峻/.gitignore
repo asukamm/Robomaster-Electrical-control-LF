@@ -1,0 +1,33 @@
+# ===== 编译产物 =====
+build/
+Debug/
+Release/
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+*.su
+*.launch
+
+# ===== ST 官方库 =====
+# 约 50MB/工程，全部是厂商原始文件，改了也没意义。
+# 需要编译时用 STM32CubeMX 打开对应 .ioc 重新生成即可。
+Drivers/
+
+# ===== 备份压缩包 =====
+*.rar
+*.zip
+*.7z
+
+# ===== 系统 / 编辑器杂项 =====
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+*.bak
+
+# ===== CubeMX 时间戳文件 =====
+.mxproject
