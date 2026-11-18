@@ -29,9 +29,9 @@ int main ()
 {
 	GPIO_InitTypeDef speed = { 0,1,0};
 	X(speed,2);
-	printf("传值调用后：Speed=%d\n",speed.Speed);
+	printf("浼犲�艰皟鐢ㄥ悗锛歋peed=%d\n",speed.Speed);
 	Y(&speed,2);
-	printf("传址调用后：Speed=%d",speed.Speed);
+	printf("浼犲潃璋冪敤鍚庯細Speed=%d",speed.Speed);
 	
 	
 	
