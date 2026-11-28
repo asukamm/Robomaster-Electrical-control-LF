@@ -1,0 +1,28 @@
+# Keil MDK build outputs
+MDK-ARM/Day7_LED_KEY/
+*.uvguix.*
+*.axf
+*.hex
+*.o
+*.d
+*.crf
+*.dep
+*.lnp
+*.map
+*.sct
+*.build_log.htm
+*.lst
+
+# Unused CMSIS folders (this project only needs Core / Device / Include)
+Drivers/CMSIS/DSP/
+Drivers/CMSIS/Lib/
+Drivers/CMSIS/NN/
+Drivers/CMSIS/RTOS/
+Drivers/CMSIS/RTOS2/
+Drivers/CMSIS/Core_A/
+Drivers/CMSIS/docs/
+
+# OS junk
+Thumbs.db
+Desktop.ini
+.DS_Store
