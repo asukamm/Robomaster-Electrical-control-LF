@@ -1,8 +1,8 @@
 {
   "configurations": [
     {
-      "name": "STM32 (compile_commands)",
-      "compileCommands": "${workspaceFolder}/**/build/**/compile_commands.json",
+      "name": "STM32 F1/F4 (根目录)",
+      "compileCommands": "${workspaceFolder}/build/compile_commands.json",
       "compilerPath": "/usr/bin/arm-none-eabi-gcc",
       "cStandard": "c11",
       "cppStandard": "c++17",
@@ -11,8 +11,22 @@
         "${workspaceFolder}/**"
       ],
       "defines": [
+        "STM32F103xB",
+        "STM32F407xx"
+      ]
+    },
+    {
+      "name": "STM32 C5 (实验四)",
+      "compileCommands": "${workspaceFolder}/30天培训/实验/实验四_串口/build/debug_GCC_STM32C593RET6/compile_commands.json",
+      "compilerPath": "/usr/bin/arm-none-eabi-gcc",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "gcc-arm",
+      "includePath": [
+        "${workspaceFolder}/30天培训/实验/实验四_串口/**"
+      ],
+      "defines": [
         "STM32C593xx",
-        "STM32F407xx",
         "_RTE_"
       ]
     }

@@ -1,6 +1,5 @@
 {
   "// 说明": "这个文件覆盖了仓库里原来那套指向 STM32H593xx 的错误配置",
-  "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
   "C_Cpp.default.compilerPath": "/usr/bin/arm-none-eabi-gcc",
   "C_Cpp.intelliSenseEngine": "default",
   "C_Cpp.errorSquiggles": "enabled",
