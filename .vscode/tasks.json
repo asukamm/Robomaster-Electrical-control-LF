@@ -1,0 +1,99 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake: Configure",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--preset", "debug"],
+      "problemMatcher": [],
+      "presentation": { "reveal": "silent", "panel": "shared" }
+    },
+    {
+      "label": "Build",
+      "detail": "编译全部固件（lab1 / lab2 / gm6020）",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "build", "--parallel"],
+      "dependsOn": "CMake: Configure",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": { "base": "$gcc", "fileLocation": ["autoDetect", "${workspaceFolder}"] },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true }
+    },
+    {
+      "label": "Build: 实验一 (lab1 · F103C8)",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "build", "--target", "lab1", "--parallel"],
+      "problemMatcher": { "base": "$gcc", "fileLocation": ["autoDetect", "${workspaceFolder}"] }
+    },
+    {
+      "label": "Build: 实验二 (lab2 · F103C8)",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "build", "--target", "lab2", "--parallel"],
+      "problemMatcher": { "base": "$gcc", "fileLocation": ["autoDetect", "${workspaceFolder}"] }
+    },
+    {
+      "label": "Build: GM6020 (gm6020 · F427IIH)",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "build", "--target", "gm6020", "--parallel"],
+      "problemMatcher": { "base": "$gcc", "fileLocation": ["autoDetect", "${workspaceFolder}"] }
+    },
+    {
+      "label": "Clean",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "build", "--target", "clean"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Flash: 实验一 (lab1)",
+      "type": "shell",
+      "command": "openocd",
+      "args": [
+        "-f", "interface/stlink.cfg",
+        "-f", "target/stm32f1x.cfg",
+        "-c", "program build/lab1.elf verify reset exit"
+      ],
+      "dependsOn": "Build: 实验一 (lab1 · F103C8)",
+      "problemMatcher": []
+    },
+    {
+      "label": "Flash: 实验二 (lab2)",
+      "type": "shell",
+      "command": "openocd",
+      "args": [
+        "-f", "interface/stlink.cfg",
+        "-f", "target/stm32f1x.cfg",
+        "-c", "program build/lab2.elf verify reset exit"
+      ],
+      "dependsOn": "Build: 实验二 (lab2 · F103C8)",
+      "problemMatcher": []
+    },
+    {
+      "label": "Flash: GM6020 (gm6020)",
+      "type": "shell",
+      "command": "openocd",
+      "args": [
+        "-f", "interface/stlink.cfg",
+        "-f", "target/stm32f4x.cfg",
+        "-c", "program build/gm6020.elf verify reset exit"
+      ],
+      "dependsOn": "Build: GM6020 (gm6020 · F427IIH)",
+      "problemMatcher": []
+    },
+    {
+      "label": "ST-Link: 查芯片 ID",
+      "type": "shell",
+      "command": "openocd",
+      "args": [
+        "-f", "interface/stlink.cfg",
+        "-f", "target/stm32f1x.cfg",
+        "-c", "init; targets; exit"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

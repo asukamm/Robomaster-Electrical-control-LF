@@ -1,0 +1,89 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "调试 实验一 (lab1 · STM32F103C8)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/lab1.elf",
+      "device": "STM32F103C8",
+      "interface": "swd",
+      "gdbPath": "/usr/bin/gdb-multiarch",
+      "runToEntryPoint": "main",
+      "preLaunchTask": "Build: 实验一 (lab1 · F103C8)",
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32f1x.cfg"
+      ],
+      "showDevDebugOutput": "none"
+    },
+    {
+      "name": "调试 实验二 (lab2 · STM32F103C8)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/lab2.elf",
+      "device": "STM32F103C8",
+      "interface": "swd",
+      "gdbPath": "/usr/bin/gdb-multiarch",
+      "runToEntryPoint": "main",
+      "preLaunchTask": "Build: 实验二 (lab2 · F103C8)",
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32f1x.cfg"
+      ],
+      "showDevDebugOutput": "none"
+    },
+    {
+      "name": "调试 GM6020 (gm6020 · STM32F427IIH)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/gm6020.elf",
+      "device": "STM32F427IIH",
+      "interface": "swd",
+      "gdbPath": "/usr/bin/gdb-multiarch",
+      "runToEntryPoint": "main",
+      "preLaunchTask": "Build: GM6020 (gm6020 · F427IIH)",
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32f4x.cfg"
+      ],
+      "showDevDebugOutput": "none"
+    },
+    {
+      "name": "附加到 实验一 (lab1)",
+      "type": "cortex-debug",
+      "request": "attach",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/lab1.elf",
+      "device": "STM32F103C8",
+      "interface": "swd",
+      "gdbPath": "/usr/bin/gdb-multiarch",
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32f1x.cfg"
+      ]
+    },
+    {
+      "name": "附加到 GM6020 (gm6020)",
+      "type": "cortex-debug",
+      "request": "attach",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/gm6020.elf",
+      "device": "STM32F427IIH",
+      "interface": "swd",
+      "gdbPath": "/usr/bin/gdb-multiarch",
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32f4x.cfg"
+      ]
+    }
+  ]
+}

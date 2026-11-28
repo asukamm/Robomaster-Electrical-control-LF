@@ -1,0 +1,28 @@
+{
+  "// 说明": "这个文件覆盖了仓库里原来那套指向 STM32H593xx 的错误配置",
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+  "C_Cpp.default.compilerPath": "/usr/bin/arm-none-eabi-gcc",
+  "C_Cpp.intelliSenseEngine": "default",
+  "C_Cpp.errorSquiggles": "enabled",
+
+  "cmake.useCMakePresets": "always",
+  "cmake.configureOnOpen": false,
+  "cmake.generator": "Ninja",
+
+  "cortex-debug.openocdPath": "/usr/bin/openocd",
+  "cortex-debug.armToolchainPath": "/usr/bin",
+  "cortex-debug.gdbPath": "/usr/bin/gdb-multiarch",
+
+  "files.associations": {
+    "*.ld": "linker-script",
+    "*.s": "asm"
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "search.exclude": {
+    "build/**": true
+  },
+  "files.watcherExclude": {
+    "**/build/**": true
+  }
+}

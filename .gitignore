@@ -1,0 +1,26 @@
+# ---- 构建产物 ----
+build/
+*.elf
+*.bin
+*.hex
+*.map
+compile_commands.json
+
+# ---- 工具链安装包（本地临时的，别提交）----
+arm-gnu-toolchain.tar.xz
+
+# ---- 编辑器 / 系统垃圾 ----
+.vscode/ipch/
+.vscode/.browse.*
+*.o
+*.d
+*.su
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---- Keil 中间产物 ----
+*.uvguix.*
+MDK-ARM/*/ 
+Objects/
+Listings/
